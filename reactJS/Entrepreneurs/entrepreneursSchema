@@ -1,0 +1,19 @@
+import * as Yup from 'yup';
+
+const addSchema = Yup.object ().shape ({
+  industryTypeId: Yup.number ().required ('requires user industry type id'),
+
+  companyStatusId: Yup.number ().required ('requires user company status id'),
+
+  hasSecurityClearance: Yup.boolean ().required ('We need it'),
+
+  hasInsurance: Yup.boolean ().required ('We need it'),
+
+  hasBonds: Yup.boolean ().required ('We need it'),
+
+  specializedEquipment: Yup.string ()
+    .required ('requires Specialized Equipment')
+    .max (4000),
+});
+
+export {addSchema};
